@@ -2,6 +2,8 @@
 
 This is a simulation model of ATCart-Omni in gazebo with ROS control.
 
+Click on the image to see a demo video.
+
 [![Video thumbnail](images/video_thumbnail.png)](https://youtu.be/rWcC73BFL28)
 
 ## Mathematics
