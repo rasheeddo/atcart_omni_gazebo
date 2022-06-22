@@ -1,0 +1,37 @@
+<launch>
+  <include
+    file="$(find gazebo_ros)/launch/empty_world.launch" />
+  <node
+    name="tf_footprint_base"
+    pkg="tf"
+    type="static_transform_publisher"
+    args="0 0 0 0 0 0 base_link base_footprint 40" />
+  <node
+    name="odom_to_world"
+    pkg="tf"
+    type="static_transform_publisher"
+    args="0 0 0 0 0 0 odom world 50" />
+
+  <node
+    name="spawn_model"
+    pkg="gazebo_ros"
+    type="spawn_model"
+    args="-file $(find atcart_omni_gazebo)/urdf/atcart_omni_gazebo.urdf -urdf -model atcart_omni_gazebo"
+    output="screen" />
+  <node
+    name="fake_joint_calibration"
+    pkg="rostopic"
+    type="rostopic"
+    args="pub /calibrated std_msgs/Bool true" />
+    
+  <param name="robot_description" textfile="$(find atcart_omni_gazebo)/urdf/atcart_omni_gazebo.urdf" />
+  <rosparam file="$(find atcart_omni_gazebo)/config/config.yaml" command="load" />
+
+  <node name="controller_spawner" pkg ="controller_manager" type="spawner" ns="/atcart_omni" args="joint_state_controller front_left_drive_wheel_velocity_controller front_right_drive_wheel_velocity_controller front_left_steering_wheel_position_controller front_right_steering_wheel_position_controller rear_left_drive_wheel_velocity_controller rear_right_drive_wheel_velocity_controller rear_left_steering_wheel_position_controller rear_right_steering_wheel_position_controller"/>
+
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen">
+        <remap from="joint_states" to="/atcart_omni/joint_states" />
+  </node>
+
+  <node name="odom_tf_node" pkg="atcart_omni_gazebo" type="odom_tf.py" output="screen"/>
+</launch>

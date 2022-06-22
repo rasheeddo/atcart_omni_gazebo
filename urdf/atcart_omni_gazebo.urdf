@@ -1,0 +1,610 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="atcart_omni_gazebo">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-8.5272E-05 0.00019433 0.013517"
+        rpy="0 0 0" />
+      <mass
+        value="3.6422" />
+      <inertia
+        ixx="0.035572"
+        ixy="-2.0114E-09"
+        ixz="-5.1822E-09"
+        iyy="0.035027"
+        iyz="-1.6826E-08"
+        izz="0.06744" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://atcart_omni_gazebo/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://atcart_omni_gazebo/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="front_left_holder">
+    <inertial>
+      <origin
+        xyz="-2.3682E-10 -0.053093 -0.15645"
+        rpy="0 0 0" />
+      <mass
+        value="0.38557" />
+      <inertia
+        ixx="0.00036334"
+        ixy="-3.3091E-13"
+        ixz="2.2993E-12"
+        iyy="0.00034289"
+        iyz="2.014E-07"
+        izz="7.3657E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://atcart_omni_gazebo/meshes/front_left_holder.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://atcart_omni_gazebo/meshes/front_left_holder.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="front_left_holder_joint"
+    type="revolute">
+    <origin
+      xyz="0.296 0.265 0.018"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="front_left_holder" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-2.0"
+      upper="2.0"
+      effort="1000"
+      velocity="1.5" />
+  </joint>
+  <link
+    name="front_left_wheel">
+    <inertial>
+      <origin
+        xyz="1.4231E-06 3.6548E-07 -0.10564"
+        rpy="0 0 0" />
+      <mass
+        value="2.2821" />
+      <inertia
+        ixx="0.014899"
+        ixy="1.1554E-12"
+        ixz="-2.4532E-07"
+        iyy="0.014899"
+        iyz="-8.7617E-09"
+        izz="0.02801" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://atcart_omni_gazebo/meshes/front_left_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://atcart_omni_gazebo/meshes/front_left_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="front_left_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="0 -0.1046 -0.256"
+      rpy="1.5708 -0.17928 0" />
+    <parent
+      link="front_left_holder" />
+    <child
+      link="front_left_wheel" />
+    <axis
+      xyz="0 0 -1" />
+    <limit effort="1000" velocity="314.0"/>
+  </joint>
+  <link
+    name="front_right_holder">
+    <inertial>
+      <origin
+        xyz="2.3682E-10 0.053093 -0.15645"
+        rpy="0 0 0" />
+      <mass
+        value="0.38557" />
+      <inertia
+        ixx="0.00036334"
+        ixy="-3.3091E-13"
+        ixz="-2.2993E-12"
+        iyy="0.00034289"
+        iyz="-2.014E-07"
+        izz="7.3657E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://atcart_omni_gazebo/meshes/front_right_holder.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://atcart_omni_gazebo/meshes/front_right_holder.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="front_right_holder_joint"
+    type="revolute">
+    <origin
+      xyz="0.296 -0.265 0.018"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="front_right_holder" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-2.0"
+      upper="2.0"
+      effort="1000"
+      velocity="1.5" />
+  </joint>
+  <link
+    name="front_right_wheel">
+    <inertial>
+      <origin
+        xyz="1.4231E-06 3.6548E-07 -0.10564"
+        rpy="0 0 0" />
+      <mass
+        value="2.2821" />
+      <inertia
+        ixx="0.014899"
+        ixy="1.2061E-12"
+        ixz="-2.4532E-07"
+        iyy="0.014899"
+        iyz="-8.7617E-09"
+        izz="0.02801" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://atcart_omni_gazebo/meshes/front_right_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://atcart_omni_gazebo/meshes/front_right_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="front_right_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="0 0.1046 -0.256"
+      rpy="-1.5708 0.022465 0" />
+    <parent
+      link="front_right_holder" />
+    <child
+      link="front_right_wheel" />
+    <axis
+      xyz="0 0 1" />
+    <limit effort="1000" velocity="314.0"/>      
+  </joint>
+  <link
+    name="rear_left_holder">
+    <inertial>
+      <origin
+        xyz="-2.3682E-10 -0.053093 -0.15645"
+        rpy="0 0 0" />
+      <mass
+        value="0.38557" />
+      <inertia
+        ixx="0.00036334"
+        ixy="-3.3091E-13"
+        ixz="2.2993E-12"
+        iyy="0.00034289"
+        iyz="2.014E-07"
+        izz="7.3657E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://atcart_omni_gazebo/meshes/rear_left_holder.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://atcart_omni_gazebo/meshes/rear_left_holder.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rear_left_holder_joint"
+    type="revolute">
+    <origin
+      xyz="-0.296 0.265 0.018"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="rear_left_holder" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-2.0"
+      upper="2.0"
+      effort="1000"
+      velocity="1.5" />
+  </joint>
+  <link
+    name="rear_left_wheel">
+    <inertial>
+      <origin
+        xyz="1.4231E-06 3.6548E-07 -0.10564"
+        rpy="0 0 0" />
+      <mass
+        value="2.2821" />
+      <inertia
+        ixx="0.014899"
+        ixy="1.2951E-12"
+        ixz="-2.4532E-07"
+        iyy="0.014899"
+        iyz="-8.7616E-09"
+        izz="0.02801" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://atcart_omni_gazebo/meshes/rear_left_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://atcart_omni_gazebo/meshes/rear_left_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rear_left_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="0 -0.1046 -0.256"
+      rpy="1.5708 0.12741 0" />
+    <parent
+      link="rear_left_holder" />
+    <child
+      link="rear_left_wheel" />
+    <axis
+      xyz="0 0 -1" />
+    <limit effort="1000" velocity="314.0"/>      
+  </joint>
+  <link
+    name="rear_right_holder">
+    <inertial>
+      <origin
+        xyz="2.3682E-10 0.053093 -0.15645"
+        rpy="0 0 0" />
+      <mass
+        value="0.38557" />
+      <inertia
+        ixx="0.00036334"
+        ixy="-3.3091E-13"
+        ixz="-2.2993E-12"
+        iyy="0.00034289"
+        iyz="-2.014E-07"
+        izz="7.3657E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://atcart_omni_gazebo/meshes/rear_right_holder.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://atcart_omni_gazebo/meshes/rear_right_holder.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rear_right_holder_joint"
+    type="revolute">
+    <origin
+      xyz="-0.296 -0.265 0.018"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="rear_right_holder" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-2.0"
+      upper="2.0"
+      effort="1000"
+      velocity="1.5" />
+  </joint>
+  <link
+    name="rear_right_wheel">
+    <inertial>
+      <origin
+        xyz="1.4231E-06 3.6548E-07 -0.10564"
+        rpy="0 0 0" />
+      <mass
+        value="2.2821" />
+      <inertia
+        ixx="0.014899"
+        ixy="1.1554E-12"
+        ixz="-2.4532E-07"
+        iyy="0.014899"
+        iyz="-8.7617E-09"
+        izz="0.02801" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://atcart_omni_gazebo/meshes/rear_right_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://atcart_omni_gazebo/meshes/rear_right_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rear_right_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="0 0.1046 -0.256"
+      rpy="-1.5708 -0.2482 0" />
+    <parent
+      link="rear_right_holder" />
+    <child
+      link="rear_right_wheel" />
+    <axis
+      xyz="0 0 1" />
+    <limit effort="1000" velocity="314.0"/>      
+  </joint>
+
+
+    <transmission name="front_left_drive_transmission">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="front_left_wheel_joint">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="front_left_motor">
+      <mechanicalReduction>1</mechanicalReduction>
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+
+  <transmission name="front_right_drive_transmission">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="front_right_wheel_joint">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="front_right_motor">
+      <mechanicalReduction>1</mechanicalReduction>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+
+  <transmission name="front_left_steering_transmission">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="front_left_holder_joint">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="front_left_servo">
+      <mechanicalReduction>1</mechanicalReduction>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+
+  <transmission name="front_right_steering_transmission">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="front_right_holder_joint">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="front_right_servo">
+      <mechanicalReduction>1</mechanicalReduction>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+
+
+
+
+    <transmission name="rear_left_drive_transmission">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="rear_left_wheel_joint">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="rear_left_motor">
+      <mechanicalReduction>1</mechanicalReduction>
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+
+  <transmission name="rear_right_drive_transmission">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="rear_right_wheel_joint">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="rear_right_motor">
+      <mechanicalReduction>1</mechanicalReduction>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+
+  <transmission name="rear_left_steering_transmission">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="rear_left_holder_joint">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="rear_left_servo">
+      <mechanicalReduction>1</mechanicalReduction>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+
+  <transmission name="rear_right_steering_transmission">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="rear_right_holder_joint">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="rear_right_servo">
+      <mechanicalReduction>1</mechanicalReduction>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotNamespace>/atcart_omni</robotNamespace>
+      <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+      <legacyModeNS>true</legacyModeNS>
+    </plugin>
+  
+
+    <plugin name="p3d_base_controller" filename="libgazebo_ros_p3d.so">
+      <alwaysOn>true</alwaysOn>
+      <updateRate>100.0</updateRate>
+      <bodyName>base_link</bodyName>
+      <topicName>odom</topicName>
+      <gaussianNoise>0.01</gaussianNoise>
+      <frameName>world</frameName>
+      <xyzOffsets>0 0 0</xyzOffsets>
+      <rpyOffsets>0 0 0</rpyOffsets>
+    </plugin>
+
+  </gazebo>
+
+
+</robot>
